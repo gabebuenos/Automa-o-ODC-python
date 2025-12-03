@@ -1,48 +1,29 @@
-🚀 Funcionalidades
+# 🔍 Automação de Consulta de Status de CPF (RPA Web)
 
-Leitura de Dados: Importa informações de clientes (Nome, CPF, Valor, Vencimento) de um arquivo dados_cpf.xlsx.
+Este script Python foi desenvolvido para automatizar a consulta de status de pagamento de clientes em um sistema web, utilizando dados de uma planilha Excel e gerando um relatório final detalhado.
 
-Automação Web: Utiliza Selenium para navegar e interagir com a aplicação web de consulta de CPF desenvolvida em OutSystems (https://gabriel-bueno.outsystemscloud.com/ConsultaCpf/).
+---
 
-Consulta de Status: Insere o CPF de cada cliente no campo de pesquisa e aciona o botão para verificar o status.
+## 🚀 Funcionalidades Principais
 
-Coleta de Informações: Captura o status de pagamento (e, se "Em Dia", a data e método de pagamento).
+O script executa um ciclo de automação web, integrando dados de entrada e saída:
 
-Geração de Relatório: Salva todas as informações processadas em uma nova planilha Planilha_fechamento.xlsx, incluindo o status final e detalhes de pagamento.
+* **Leitura de Dados**: Importa as informações de clientes (Nome, CPF, Valor e Vencimento) do arquivo **`dados_cpf.xlsx`**.
+* **Automação Web**: Utiliza o **Selenium WebDriver** para navegar e interagir com a aplicação de consulta de CPF desenvolvida em OutSystems (URL: `https://gabriel-bueno.outsystemscloud.com/ConsultaCpf/`).
+* **Consulta de Status**: Insere o **CPF** de cada cliente no campo de pesquisa da aplicação web e aciona o botão de consulta.
+* **Coleta de Informações**: Captura o status de pagamento exibido na tela e, se o status for "**Em Dia**", extrai também a data e o método de pagamento correspondentes.
+* **Geração de Relatório**: Salva todas as informações processadas em uma nova planilha chamada **`Planilha_fechamento.xlsx`**, incluindo o status final e os detalhes do pagamento.
 
-⚙️ Utilizações
+---
 
-Python: Linguagem principal do script.
+## ⚙️ Tecnologias Utilizadas
 
-Selenium WebDriver: Para automação da interação com o navegador web.
+Esta solução de automação é construída sobre as seguintes ferramentas e plataformas:
 
-OpenPyXL: Para leitura e escrita de dados em arquivos Excel.
+* **Python**: A linguagem de programação principal do script.
+* **Selenium WebDriver**: Framework essencial para a automação da interação com o navegador web (cliques, preenchimento de campos, navegação).
+* **OpenPyXL**: Biblioteca para manipulação de arquivos Excel, usada tanto para a leitura do arquivo de entrada (`dados_cpf.xlsx`) quanto para a escrita do relatório final (`Planilha_fechamento.xlsx`).
+* **Google Chrome**: O navegador utilizado para a automação (requer o **ChromeDriver** compatível).
+* **OutSystems**: A plataforma low-
 
-Google Chrome: Navegador utilizado para a automação (requer ChromeDriver compatível).
-
-OutSystems: A plataforma low-code na qual o sistema de consulta de CPF foi desenvolvido.
-
-💻 Como Usar
-
-Pré-requisitos
-Certifique-se de ter o Python instalado e as seguintes bibliotecas:
-
-pip install selenium openpyxl
-Você também precisará do ChromeDriver compatível com a sua versão do Google Chrome.
-
-Configuração
-dados_cpf.xlsx: Crie uma planilha Excel com o nome dados_cpf.xlsx na mesma pasta do script. Ela deve conter as colunas: Nome, cpf, valor e vencimento (na primeira linha).
-
-Exemplo:
-| Nome  | cpf         | valor | vencimento |
-| :---- | :---------- | :---- | :--------- |
-| João  | 123.456.789-01 | 100.00 | 2023-12-31 |
-| Maria | 987.654.321-09 | 50.50 | 2024-01-15 |
-
-Planilha_fechamento.xlsx: O script criará ou atualizará este arquivo. Se não existir, ele será gerado automaticamente.
-
-Execução
-Basta executar o script Python:
-
-python seu_script_principal.py
-O navegador Chrome será aberto automaticamente, e o script começará a processar os CPFs. Ao finalizar, o arquivo Planilha_fechamento.xlsx será salvo com os resultados.
+* 
